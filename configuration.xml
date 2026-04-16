@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<raConfiguration version="11">
+<raConfiguration version="3">
   <generalSettings>
+    <option key="#pinconfiguration#" value="R9A07G074M04GBG.pincfg"/>
     <option key="#Board#" value="board.rzt2lrsk.ram"/>
     <option key="CPU" value="RZT2L"/>
     <option key="Core" value="CR52_0"/>
@@ -8,11 +9,10 @@
     <option key="#TargetARCHITECTURE#" value="cortex-r52"/>
     <option key="#DeviceCommand#" value="R9A07G074M04"/>
     <option key="#RTOS#" value="_none"/>
-    <option key="#pinconfiguration#" value="R9A07G074M04GBG.pincfg"/>
     <option key="#FSPVersion#" value="3.0.0"/>
-    <option key="#ConfigurationFragments#" value="Renesas##BSP##Board##rzt2l_rsk##ram_execution"/>
     <option key="#SELECTED_TOOLCHAIN#" value="gcc-arm-embedded"/>
     <option key="#ToolchainVersion#" value="13.3.1.arm-13-24"/>
+    <option key="#ConfigurationFragments#" value="Renesas##BSP##Board##rzt2l_rsk##ram_execution"/>
   </generalSettings>
   <raBspConfiguration>
     <config id="config.bsp.rzt2l.R9A07G074M04GBG">
@@ -588,7 +588,7 @@
     <node id="board.clock.pclkm.display" option="board.clock.pclkm.display.value"/>
     <node id="board.clock.pclkl.display" option="board.clock.pclkl.display.value"/>
     <node id="board.clock.pclkadc.display" option="board.clock.pclkadc.display.value"/>
-    <node id="board.clock.cpu0clk.mul" option="board.clock.cpu0clk.mul.4"/>
+    <node id="board.clock.cpu0clk.mul" option="board.clock.cpu0clk.mul.1"/>
     <node id="board.clock.cpu0clk.display" option="board.clock.cpu0clk.display.value"/>
     <node id="board.clock.ckio.div" option="board.clock.ckio.div.4"/>
     <node id="board.clock.ckio.display" option="board.clock.ckio.display.value"/>
@@ -611,9 +611,9 @@
       <description>I/O Port</description>
       <originalPack>Renesas.RZT.3.0.0.pack</originalPack>
     </component>
-    <component apiversion="" class="CMSIS" condition="" group="CMSIS5" subgroup="Core" variant="" vendor="Arm" version="6.1.0+fsp.3.0.0">
+    <component apiversion="" class="CMSIS" condition="" group="CMSIS5" subgroup="Core" variant="" vendor="Arm" version="6.1.0+fsp.3.1.0">
       <description>Arm CMSIS Version 6 - Core</description>
-      <originalPack>Arm.CMSIS6.6.1.0+fsp.3.0.0.pack</originalPack>
+      <originalPack>Arm.CMSIS6.6.1.0+fsp.3.1.0.pack</originalPack>
     </component>
     <component apiversion="" class="BSP" condition="" group="rzt2l" subgroup="device" variant="R9A07G074M04GBG" vendor="Renesas" version="3.0.0">
       <description>Board support package for R9A07G074M04GBG</description>
@@ -631,442 +631,18 @@
       <description>RSK+RZT2L Board Support Files (RAM execution without flash memory)</description>
       <originalPack>Renesas.RZT_board_rzt2l_rsk.3.0.0.pack</originalPack>
     </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_dmac" variant="" vendor="Renesas" version="3.0.0">
-      <description>Direct Memory Access Controller</description>
-      <originalPack>Renesas.RZT.3.0.0.pack</originalPack>
-    </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_gpt" variant="" vendor="Renesas" version="3.0.0">
-      <description>General PWM Timer</description>
-      <originalPack>Renesas.RZT.3.0.0.pack</originalPack>
-    </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_sci_uart" variant="" vendor="Renesas" version="3.0.0">
-      <description>SCI UART</description>
-      <originalPack>Renesas.RZT.3.0.0.pack</originalPack>
-    </component>
-    <component apiversion="" class="HAL Drivers" condition="" group="all" subgroup="r_spi" variant="" vendor="Renesas" version="3.0.0">
-      <description>Serial Peripheral Interface</description>
-      <originalPack>Renesas.RZT.3.0.0.pack</originalPack>
-    </component>
   </raComponentSelection>
-  <raElcConfiguration/>
-  <raIcuConfiguration>
-    <interrupt event="event.spi.ch1.spi1_spri" isr="enc_ch0_rxi_isr"/>
-    <interrupt event="event.spi.ch2.spi2_spri" isr="enc_ch1_rxi_isr"/>
-    <interrupt event="event.spi.ch1.spi1_spei" isr="enc_ch0_eri_isr"/>
-    <interrupt event="event.spi.ch2.spi2_spei" isr="enc_ch1_eri_isr"/>
-    <interrupt event="event.gpt.unit0.ch1.gpt_ovf" isr="enc_gpt1_isr"/>
-  </raIcuConfiguration>
-  <raLinkMapConfiguration/>
+  <raIcuConfiguration/>
+  <raMessagingConfiguration/>
   <raModuleConfiguration>
     <module id="module.driver.ioport_on_ioport.0">
       <property id="module.driver.ioport.name" value="g_ioport"/>
-      <property id="module.driver.ioport.elc_trigger_output_group1" value="_disabled"/>
-      <property id="module.driver.ioport.port_select_output_group1" value=""/>
-      <property id="module.driver.ioport.operation_output_group1" value="Low output"/>
-      <property id="module.driver.ioport.elc_trigger_output_group2" value="_disabled"/>
-      <property id="module.driver.ioport.port_select_output_group2" value=""/>
-      <property id="module.driver.ioport.operation_output_group2" value="Low output"/>
-      <property id="module.driver.ioport.elc_trigger_input_group1" value="_disabled"/>
-      <property id="module.driver.ioport.event_control_input_group1" value="Disabled"/>
-      <property id="module.driver.ioport.port_select_input_group1" value=""/>
-      <property id="module.driver.ioport.edge_detect_input_group1" value="Rising edge"/>
-      <property id="module.driver.ioport.buffer_overwrite_input_group1" value="Disabled"/>
-      <property id="module.driver.ioport.pin0_initial_value_input_group1" value="module.driver.ioport.pin0_initial_value_input_group1.low"/>
-      <property id="module.driver.ioport.pin1_initial_value_input_group1" value="module.driver.ioport.pin1_initial_value_input_group1.low"/>
-      <property id="module.driver.ioport.pin2_initial_value_input_group1" value="module.driver.ioport.pin2_initial_value_input_group1.low"/>
-      <property id="module.driver.ioport.pin3_initial_value_input_group1" value="module.driver.ioport.pin3_initial_value_input_group1.low"/>
-      <property id="module.driver.ioport.pin4_initial_value_input_group1" value="module.driver.ioport.pin4_initial_value_input_group1.low"/>
-      <property id="module.driver.ioport.pin5_initial_value_input_group1" value="module.driver.ioport.pin5_initial_value_input_group1.low"/>
-      <property id="module.driver.ioport.pin6_initial_value_input_group1" value="module.driver.ioport.pin6_initial_value_input_group1.low"/>
-      <property id="module.driver.ioport.pin7_initial_value_input_group1" value="module.driver.ioport.pin7_initial_value_input_group1.low"/>
-      <property id="module.driver.ioport.elc_trigger_input_group2" value="_disabled"/>
-      <property id="module.driver.ioport.event_control_input_group2" value="Disabled"/>
-      <property id="module.driver.ioport.port_select_input_group2" value=""/>
-      <property id="module.driver.ioport.edge_detect_input_group2" value="Rising edge"/>
-      <property id="module.driver.ioport.buffer_overwrite_input_group2" value="Disabled"/>
-      <property id="module.driver.ioport.pin0_initial_value_input_group2" value="module.driver.ioport.pin0_initial_value_input_group2.low"/>
-      <property id="module.driver.ioport.pin1_initial_value_input_group2" value="module.driver.ioport.pin1_initial_value_input_group2.low"/>
-      <property id="module.driver.ioport.pin2_initial_value_input_group2" value="module.driver.ioport.pin2_initial_value_input_group2.low"/>
-      <property id="module.driver.ioport.pin3_initial_value_input_group2" value="module.driver.ioport.pin3_initial_value_input_group2.low"/>
-      <property id="module.driver.ioport.pin4_initial_value_input_group2" value="module.driver.ioport.pin4_initial_value_input_group2.low"/>
-      <property id="module.driver.ioport.pin5_initial_value_input_group2" value="module.driver.ioport.pin5_initial_value_input_group2.low"/>
-      <property id="module.driver.ioport.pin6_initial_value_input_group2" value="module.driver.ioport.pin6_initial_value_input_group2.low"/>
-      <property id="module.driver.ioport.pin7_initial_value_input_group2" value="module.driver.ioport.pin7_initial_value_input_group2.low"/>
-      <property id="module.driver.ioport.event_control_single_port0" value="Disabled"/>
-      <property id="module.driver.ioport.event_direction_single_port0" value="Output direction"/>
-      <property id="module.driver.ioport.port_number_single_port0" value="module.driver.ioport.port_number_single_port0.p16_0"/>
-      <property id="module.driver.ioport.elc_trigger_single_output_port0" value="_disabled"/>
-      <property id="module.driver.ioport.operation_single_output_port0" value="Low output"/>
-      <property id="module.driver.ioport.edge_detect_single_output_port0" value="Rising edge"/>
-      <property id="module.driver.ioport.event_control_single_port1" value="Disabled"/>
-      <property id="module.driver.ioport.event_direction_single_port1" value="Output direction"/>
-      <property id="module.driver.ioport.port_number_single_port1" value="module.driver.ioport.port_number_single_port1.p16_0"/>
-      <property id="module.driver.ioport.elc_trigger_single_output_port1" value="_disabled"/>
-      <property id="module.driver.ioport.operation_single_output_port1" value="Low output"/>
-      <property id="module.driver.ioport.edge_detect_single_output_port1" value="Rising edge"/>
-      <property id="module.driver.ioport.event_control_single_port2" value="Disabled"/>
-      <property id="module.driver.ioport.event_direction_single_port2" value="Output direction"/>
-      <property id="module.driver.ioport.port_number_single_port2" value="module.driver.ioport.port_number_single_port2.p16_0"/>
-      <property id="module.driver.ioport.elc_trigger_single_output_port2" value="_disabled"/>
-      <property id="module.driver.ioport.operation_single_output_port2" value="Low output"/>
-      <property id="module.driver.ioport.edge_detect_single_output_port2" value="Rising edge"/>
-      <property id="module.driver.ioport.event_control_single_port3" value="Disabled"/>
-      <property id="module.driver.ioport.event_direction_single_port3" value="Output direction"/>
-      <property id="module.driver.ioport.port_number_single_port3" value="module.driver.ioport.port_number_single_port3.p16_0"/>
-      <property id="module.driver.ioport.elc_trigger_single_output_port3" value="_disabled"/>
-      <property id="module.driver.ioport.operation_single_output_port3" value="Low output"/>
-      <property id="module.driver.ioport.edge_detect_single_output_port3" value="Rising edge"/>
     </module>
     <module id="module.bsp.memory_config.0"/>
-    <module id="module.driver.uart_on_sci_uart.702178568">
-      <property id="module.driver.uart.name" value="g_uart0"/>
-      <property id="module.driver.uart.channel" value="0"/>
-      <property id="module.driver.uart.data_bits" value="module.driver.uart.data_bits.data_bits_8"/>
-      <property id="module.driver.uart.parity" value="module.driver.uart.parity.parity_off"/>
-      <property id="module.driver.uart.stop_bits" value="module.driver.uart.stop_bits.stop_bits_1"/>
-      <property id="module.driver.uart.baud" value="115200"/>
-      <property id="module.driver.uart.baudrate_modulation" value="module.driver.uart.baudrate_modulation.disabled"/>
-      <property id="module.driver.uart.baudrate_max_err" value="5"/>
-      <property id="module.driver.uart.clock_source" value="module.driver.uart.clock_source.scinasyncclk"/>
-      <property id="module.driver.uart.flow_control" value="module.driver.uart.flow_control.rts"/>
-      <property id="module.driver.uart.pin_control_pin" value="enum_mcu.port.external.pin.disabled"/>
-      <property id="module.driver.uart.clk_src" value="module.driver.uart.clk_src.int_clk"/>
-      <property id="module.driver.uart.rx_edge_start" value="module.driver.uart.rx_edge_start.falling_edge"/>
-      <property id="module.driver.uart.noisecancel_en" value="module.driver.uart.noisecancel_en.disabled"/>
-      <property id="module.driver.uart.rx_fifo_trigger" value="module.driver.uart.rx_fifo_trigger.max"/>
-      <property id="module.driver.uart.rs485.de_enable" value="module.driver.uart.rs485.de_enable.disabled"/>
-      <property id="module.driver.uart.rs485.de_polarity" value="module.driver.uart.rs485.de_polarity.high"/>
-      <property id="module.driver.uart.rs485.de_assertion_time" value="1"/>
-      <property id="module.driver.uart.rs485.de_negation_time" value="1"/>
-      <property id="module.driver.uart.callback" value="user_uart_callback"/>
-      <property id="module.driver.uart.rxi_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.uart.txi_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.uart.tei_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.uart.eri_ipl" value="board.icu.common.irq.priority12"/>
-    </module>
-    <module id="module.driver.timer_on_gpt.362709291">
-      <property id="module.driver.timer.name" value="g_timer0"/>
-      <property id="module.driver.gpt.unit" value="0"/>
-      <property id="module.driver.gpt.channel" value="0"/>
-      <property id="module.driver.timer.mode" value="module.driver.timer.mode.mode_periodic"/>
-      <property id="module.driver.timer.period" value="1"/>
-      <property id="module.driver.timer.compare_match.a.status" value="module.driver.timer.compare_match.a.status.disabled"/>
-      <property id="module.driver.timer.compare_match.a.value" value="0"/>
-      <property id="module.driver.timer.compare_match.b.status" value="module.driver.timer.compare_match.b.status.disabled"/>
-      <property id="module.driver.timer.compare_match.b.value" value="0"/>
-      <property id="module.driver.timer.unit" value="module.driver.timer.unit.unit_period_msec"/>
-      <property id="module.driver.timer.gtior.gtioa.initial_output_level" value="module.driver.timer.gtior.gtioa.initial_output_level.low"/>
-      <property id="module.driver.timer.gtior.gtioa.cycle_end_output_level" value="module.driver.timer.gtior.gtioa.cycle_end_output_level.retain"/>
-      <property id="module.driver.timer.gtior.gtioa.compare_match_output_level" value="module.driver.timer.gtior.gtioa.compare_match_output_level.retain"/>
-      <property id="module.driver.timer.gtior.gtioa.count_stop_retain" value="module.driver.timer.gtior.gtioa.count_stop_retain.disabled"/>
-      <property id="module.driver.timer.gtior.gtiob.initial_output_level" value="module.driver.timer.gtior.gtiob.initial_output_level.low"/>
-      <property id="module.driver.timer.gtior.gtiob.cycle_end_output_level" value="module.driver.timer.gtior.gtiob.cycle_end_output_level.retain"/>
-      <property id="module.driver.timer.gtior.gtiob.compare_match_output_level" value="module.driver.timer.gtior.gtiob.compare_match_output_level.retain"/>
-      <property id="module.driver.timer.gtior.gtiob.count_stop_retain" value="module.driver.timer.gtior.gtiob.count_stop_retain.disabled"/>
-      <property id="module.driver.timer.gtior.custom_waveform_enable" value="module.driver.timer.gtior.custom_waveform_enable.disabled"/>
-      <property id="module.driver.timer.duty_cycle" value="50"/>
-      <property id="module.driver.timer.gtioca_output_enabled" value="module.driver.timer.gtioca_output_enabled.false"/>
-      <property id="module.driver.timer.gtioca_stop_level" value="module.driver.timer.gtioca_stop_level.pin_level_low"/>
-      <property id="module.driver.timer.gtiocb_output_enabled" value="module.driver.timer.gtiocb_output_enabled.false"/>
-      <property id="module.driver.timer.gtiocb_stop_level" value="module.driver.timer.gtiocb_stop_level.pin_level_low"/>
-      <property id="module.driver.timer.count_up_source" value=""/>
-      <property id="module.driver.timer.count_down_source" value=""/>
-      <property id="module.driver.timer.phase_count_setting_automatically_enable" value="module.driver.timer.phase_count_setting_automatically_enable.disabled"/>
-      <property id="module.driver.timer.counting_mode" value="module.driver.timer.counting_mode.mode1"/>
-      <property id="module.driver.timer.start_source" value=""/>
-      <property id="module.driver.timer.stop_source" value=""/>
-      <property id="module.driver.timer.clear_source" value=""/>
-      <property id="module.driver.timer.capture_a_source" value=""/>
-      <property id="module.driver.timer.capture_b_source" value=""/>
-      <property id="module.driver.timer.gtioca_filter" value="module.driver.timer.gtioc_filter.gtioc_filter_none"/>
-      <property id="module.driver.timer.gtiocb_filter" value="module.driver.timer.gtioc_filter.gtioc_filter_none"/>
-      <property id="module.driver.timer.p_callback" value="r_g_timer0_callback"/>
-      <property id="module.driver.timer.ipl" value="board.icu.common.irq.priority11"/>
-      <property id="module.driver.timer.capture_a_ipl" value="_disabled"/>
-      <property id="module.driver.timer.capture_b_ipl" value="_disabled"/>
-      <property id="module.driver.timer.trough_ipl" value="_disabled"/>
-      <property id="module.driver.timer.gpt_sel.p_callback" value="NULL"/>
-      <property id="module.driver.timer.gpt_sel.overflow_interrupt_source" value=""/>
-      <property id="module.driver.timer.gpt_sel.capture_a_interrupt_source" value=""/>
-      <property id="module.driver.timer.gpt_sel.capture_b_interrupt_source" value=""/>
-      <property id="module.driver.timer.gpt_sel.trough_interrupt_source" value=""/>
-      <property id="module.driver.timer.gpt_sel.dead_time_error_interrupt_source" value=""/>
-      <property id="module.driver.timer.gpt_sel.int0_ipl" value="_disabled"/>
-      <property id="module.driver.timer.gpt_sel.int1_ipl" value="_disabled"/>
-      <property id="module.driver.timer.gpt_sel.int2_ipl" value="_disabled"/>
-      <property id="module.driver.timer.gpt_sel.int3_ipl" value="_disabled"/>
-      <property id="module.driver.timer.gpt_sel.int4_ipl" value="_disabled"/>
-      <property id="module.driver.timer.extra" value="module.driver.timer.extra.disabled"/>
-      <property id="module.driver.timer.poeg_link" value="module.driver.timer.poeg_link.poeg_link_poeg0"/>
-      <property id="module.driver.timer.output_disable" value=""/>
-      <property id="module.driver.timer.adc_trigger" value=""/>
-      <property id="module.driver.timer.dead_time_count_up" value="0"/>
-      <property id="module.driver.timer.dead_time_count_down" value="0"/>
-      <property id="module.driver.timer.adc_a_compare_match" value="0"/>
-      <property id="module.driver.timer.adc_b_compare_match" value="0"/>
-      <property id="module.driver.timer.interrupt_skip.source" value="module.driver.timer.interrupt_skip.source.none"/>
-      <property id="module.driver.timer.interrupt_skip.count" value="module.driver.timer.interrupt_skip.count.count_0"/>
-      <property id="module.driver.timer.interrupt_skip.adc" value="module.driver.timer.interrupt_skip.skip_sources.interrupt_skip.adc.none"/>
-      <property id="module.driver.timer.gtioca_disable_setting" value="module.driver.timer.gtioca_disable_setting.gtioc_disable_prohibited"/>
-      <property id="module.driver.timer.gtiocb_disable_setting" value="module.driver.timer.gtiocb_disable_setting.gtioc_disable_prohibited"/>
-      <property id="module.driver.timer.interrupt_skip_ext1.source" value="module.driver.timer.interrupt_skip_ext1.source.none"/>
-      <property id="module.driver.timer.interrupt_skip_ext1.count" value="module.driver.timer.interrupt_skip_ext1.count.count_0"/>
-      <property id="module.driver.timer.interrupt_skip_ext2.source" value="module.driver.timer.interrupt_skip_ext2.source.none"/>
-      <property id="module.driver.timer.interrupt_skip_ext2.count" value="module.driver.timer.interrupt_skip_ext2.count.count_0"/>
-      <property id="module.driver.timer.interrupt_skip_func.ovf" value="module.driver.timer.interrupt_skip_func.ovf.none"/>
-      <property id="module.driver.timer.interrupt_skip_func.unf" value="module.driver.timer.interrupt_skip_func.unf.none"/>
-      <property id="module.driver.timer.interrupt_skip_func.adc_a" value="module.driver.timer.interrupt_skip_func.adc_a.none"/>
-      <property id="module.driver.timer.interrupt_skip_func.adc_b" value="module.driver.timer.interrupt_skip_func.adc_b.none"/>
-      <property id="module.driver.timer.dead_time_error_ipl" value="_disabled"/>
-      <property id="module.driver.timer.input_capture" value="module.driver.timer.input_capture.enabled"/>
-      <property id="module.driver.timer.gtioc_isel" value="module.driver.timer.gtioc_isel.not_supported"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_a" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_b" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_c" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_d" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_e" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_f" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_g" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_h" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_a" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_b" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_c" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_d" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_e" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_f" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_g" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_h" value="_disabled"/>
-    </module>
-    <module id="module.driver.timer_on_gpt.2038775320">
-      <property id="module.driver.timer.name" value="g_timer1"/>
-      <property id="module.driver.gpt.unit" value="0"/>
-      <property id="module.driver.gpt.channel" value="1"/>
-      <property id="module.driver.timer.mode" value="module.driver.timer.mode.mode_periodic"/>
-      <property id="module.driver.timer.period" value="1"/>
-      <property id="module.driver.timer.compare_match.a.status" value="module.driver.timer.compare_match.a.status.disabled"/>
-      <property id="module.driver.timer.compare_match.a.value" value="0"/>
-      <property id="module.driver.timer.compare_match.b.status" value="module.driver.timer.compare_match.b.status.disabled"/>
-      <property id="module.driver.timer.compare_match.b.value" value="0"/>
-      <property id="module.driver.timer.unit" value="module.driver.timer.unit.unit_period_msec"/>
-      <property id="module.driver.timer.gtior.gtioa.initial_output_level" value="module.driver.timer.gtior.gtioa.initial_output_level.low"/>
-      <property id="module.driver.timer.gtior.gtioa.cycle_end_output_level" value="module.driver.timer.gtior.gtioa.cycle_end_output_level.retain"/>
-      <property id="module.driver.timer.gtior.gtioa.compare_match_output_level" value="module.driver.timer.gtior.gtioa.compare_match_output_level.retain"/>
-      <property id="module.driver.timer.gtior.gtioa.count_stop_retain" value="module.driver.timer.gtior.gtioa.count_stop_retain.disabled"/>
-      <property id="module.driver.timer.gtior.gtiob.initial_output_level" value="module.driver.timer.gtior.gtiob.initial_output_level.low"/>
-      <property id="module.driver.timer.gtior.gtiob.cycle_end_output_level" value="module.driver.timer.gtior.gtiob.cycle_end_output_level.retain"/>
-      <property id="module.driver.timer.gtior.gtiob.compare_match_output_level" value="module.driver.timer.gtior.gtiob.compare_match_output_level.retain"/>
-      <property id="module.driver.timer.gtior.gtiob.count_stop_retain" value="module.driver.timer.gtior.gtiob.count_stop_retain.disabled"/>
-      <property id="module.driver.timer.gtior.custom_waveform_enable" value="module.driver.timer.gtior.custom_waveform_enable.disabled"/>
-      <property id="module.driver.timer.duty_cycle" value="50"/>
-      <property id="module.driver.timer.gtioca_output_enabled" value="module.driver.timer.gtioca_output_enabled.false"/>
-      <property id="module.driver.timer.gtioca_stop_level" value="module.driver.timer.gtioca_stop_level.pin_level_low"/>
-      <property id="module.driver.timer.gtiocb_output_enabled" value="module.driver.timer.gtiocb_output_enabled.false"/>
-      <property id="module.driver.timer.gtiocb_stop_level" value="module.driver.timer.gtiocb_stop_level.pin_level_low"/>
-      <property id="module.driver.timer.count_up_source" value=""/>
-      <property id="module.driver.timer.count_down_source" value=""/>
-      <property id="module.driver.timer.phase_count_setting_automatically_enable" value="module.driver.timer.phase_count_setting_automatically_enable.disabled"/>
-      <property id="module.driver.timer.counting_mode" value="module.driver.timer.counting_mode.mode1"/>
-      <property id="module.driver.timer.start_source" value=""/>
-      <property id="module.driver.timer.stop_source" value=""/>
-      <property id="module.driver.timer.clear_source" value=""/>
-      <property id="module.driver.timer.capture_a_source" value=""/>
-      <property id="module.driver.timer.capture_b_source" value=""/>
-      <property id="module.driver.timer.gtioca_filter" value="module.driver.timer.gtioc_filter.gtioc_filter_none"/>
-      <property id="module.driver.timer.gtiocb_filter" value="module.driver.timer.gtioc_filter.gtioc_filter_none"/>
-      <property id="module.driver.timer.p_callback" value="NULL"/>
-      <property id="module.driver.timer.ipl" value="_disabled"/>
-      <property id="module.driver.timer.capture_a_ipl" value="_disabled"/>
-      <property id="module.driver.timer.capture_b_ipl" value="_disabled"/>
-      <property id="module.driver.timer.trough_ipl" value="_disabled"/>
-      <property id="module.driver.timer.gpt_sel.p_callback" value="NULL"/>
-      <property id="module.driver.timer.gpt_sel.overflow_interrupt_source" value=""/>
-      <property id="module.driver.timer.gpt_sel.capture_a_interrupt_source" value=""/>
-      <property id="module.driver.timer.gpt_sel.capture_b_interrupt_source" value=""/>
-      <property id="module.driver.timer.gpt_sel.trough_interrupt_source" value=""/>
-      <property id="module.driver.timer.gpt_sel.dead_time_error_interrupt_source" value=""/>
-      <property id="module.driver.timer.gpt_sel.int0_ipl" value="_disabled"/>
-      <property id="module.driver.timer.gpt_sel.int1_ipl" value="_disabled"/>
-      <property id="module.driver.timer.gpt_sel.int2_ipl" value="_disabled"/>
-      <property id="module.driver.timer.gpt_sel.int3_ipl" value="_disabled"/>
-      <property id="module.driver.timer.gpt_sel.int4_ipl" value="_disabled"/>
-      <property id="module.driver.timer.extra" value="module.driver.timer.extra.disabled"/>
-      <property id="module.driver.timer.poeg_link" value="module.driver.timer.poeg_link.poeg_link_poeg0"/>
-      <property id="module.driver.timer.output_disable" value=""/>
-      <property id="module.driver.timer.adc_trigger" value=""/>
-      <property id="module.driver.timer.dead_time_count_up" value="0"/>
-      <property id="module.driver.timer.dead_time_count_down" value="0"/>
-      <property id="module.driver.timer.adc_a_compare_match" value="0"/>
-      <property id="module.driver.timer.adc_b_compare_match" value="0"/>
-      <property id="module.driver.timer.interrupt_skip.source" value="module.driver.timer.interrupt_skip.source.none"/>
-      <property id="module.driver.timer.interrupt_skip.count" value="module.driver.timer.interrupt_skip.count.count_0"/>
-      <property id="module.driver.timer.interrupt_skip.adc" value="module.driver.timer.interrupt_skip.skip_sources.interrupt_skip.adc.none"/>
-      <property id="module.driver.timer.gtioca_disable_setting" value="module.driver.timer.gtioca_disable_setting.gtioc_disable_prohibited"/>
-      <property id="module.driver.timer.gtiocb_disable_setting" value="module.driver.timer.gtiocb_disable_setting.gtioc_disable_prohibited"/>
-      <property id="module.driver.timer.interrupt_skip_ext1.source" value="module.driver.timer.interrupt_skip_ext1.source.none"/>
-      <property id="module.driver.timer.interrupt_skip_ext1.count" value="module.driver.timer.interrupt_skip_ext1.count.count_0"/>
-      <property id="module.driver.timer.interrupt_skip_ext2.source" value="module.driver.timer.interrupt_skip_ext2.source.none"/>
-      <property id="module.driver.timer.interrupt_skip_ext2.count" value="module.driver.timer.interrupt_skip_ext2.count.count_0"/>
-      <property id="module.driver.timer.interrupt_skip_func.ovf" value="module.driver.timer.interrupt_skip_func.ovf.none"/>
-      <property id="module.driver.timer.interrupt_skip_func.unf" value="module.driver.timer.interrupt_skip_func.unf.none"/>
-      <property id="module.driver.timer.interrupt_skip_func.adc_a" value="module.driver.timer.interrupt_skip_func.adc_a.none"/>
-      <property id="module.driver.timer.interrupt_skip_func.adc_b" value="module.driver.timer.interrupt_skip_func.adc_b.none"/>
-      <property id="module.driver.timer.dead_time_error_ipl" value="_disabled"/>
-      <property id="module.driver.timer.input_capture" value="module.driver.timer.input_capture.enabled"/>
-      <property id="module.driver.timer.gtioc_isel" value="module.driver.timer.gtioc_isel.not_supported"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_a" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_b" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_c" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_d" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_e" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_f" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_g" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_llpp_event_h" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_a" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_b" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_c" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_d" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_e" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_f" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_g" value="_disabled"/>
-      <property id="module.driver.timer.elc_trigger_nonsafty_event_h" value="_disabled"/>
-    </module>
-    <module id="module.driver.transfer_on_dmac.1835883999">
-      <property id="module.driver.transfer.name" value="g_transfer0"/>
-      <property id="module.driver.transfer.unit" value="0"/>
-      <property id="module.driver.transfer.channel" value="0"/>
-      <property id="module.driver.transfer.dma_mode" value="module.driver.transfer.dma_mode.dma_mode_register"/>
-      <property id="module.driver.transfer.mode" value="module.driver.transfer.mode.mode_normal"/>
-      <property id="module.driver.transfer.src_size" value="module.driver.transfer.src_size.size_1_byte"/>
-      <property id="module.driver.transfer.dest_size" value="module.driver.transfer.dest_size.size_1_byte"/>
-      <property id="module.driver.transfer.dest_addr_mode" value="module.driver.transfer.dest_addr_mode.addr_mode_fixed"/>
-      <property id="module.driver.transfer.src_addr_mode" value="module.driver.transfer.src_addr_mode.addr_mode_fixed"/>
-      <property id="module.driver.transfer.p_dest" value="NULL"/>
-      <property id="module.driver.transfer.p_src" value="NULL"/>
-      <property id="module.driver.transfer.length" value="1"/>
-      <property id="module.driver.transfer.activation_event" value="module.driver.dmac.gpt1_ovf"/>
-      <property id="module.driver.transfer_on_dmac.request_source" value="module.driver.transfer_on_dmac.request_source.source"/>
-      <property id="module.driver.transfer_on_dmac.low_detection" value="module.driver.transfer_on_dmac.low_detection.disable"/>
-      <property id="module.driver.transfer_on_dmac.high_detection" value="module.driver.transfer_on_dmac.high_detection.enable"/>
-      <property id="module.driver.transfer_on_dmac.level_detection" value="module.driver.transfer_on_dmac.level_detection.edge"/>
-      <property id="module.driver.transfer_on_dmac.ack_mode" value="module.driver.transfer_on_dmac.ack_mode.mask_mode"/>
-      <property id="module.driver.transfer_on_dmac.descriptor" value="NULL"/>
-      <property id="module.driver.transfer.p_callback" value="NULL"/>
-      <property id="module.driver.transfer.p_context" value="NULL"/>
-      <property id="module.driver.transfer.irq_detect_type" value="module.driver.transfer.irq_detect_type.level"/>
-      <property id="module.driver.transfer.ipl" value="_disabled"/>
-      <property id="module.driver.transfer_on_dmac.next1_enable" value="module.driver.transfer_on_dmac.next1_enable.disable"/>
-      <property id="module.driver.transfer_on_dmac.p_dest_next1" value="NULL"/>
-      <property id="module.driver.transfer_on_dmac.p_src_next1" value="NULL"/>
-      <property id="module.driver.transfer_on_dmac.length_next1" value="1"/>
-      <property id="module.driver.transfer_on_dmac.transfer_interval" value="0"/>
-    </module>
-    <module id="module.driver.spi_on_spi.1212925467">
-      <property id="module.driver.spi.name" value="g_spi0"/>
-      <property id="module.driver.spi.channel" value="1"/>
-      <property id="module.driver.spi.rxi_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.spi.txi_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.spi.tei_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.spi.eri_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.spi.operating_mode" value="module.driver.spi.operating_mode.mode_master"/>
-      <property id="module.driver.spi.clk_phase" value="module.driver.spi.clk_phase.clk_phase_edge_odd"/>
-      <property id="module.driver.spi.clk_polarity" value="module.driver.spi.clk_polarity.clk_polarity_high"/>
-      <property id="module.driver.spi.mode_fault" value="module.driver.spi.mode_fault.mode_fault_error_disable"/>
-      <property id="module.driver.spi.bit_order" value="module.driver.spi.bit_order.bit_order_msb_first"/>
-      <property id="module.driver.spi.p_callback" value="NULL"/>
-      <property id="module.driver.spi.spi_clksyn" value="module.driver.spi.spi_clksyn.spi_clksyn"/>
-      <property id="module.driver.spi.spi_comm" value="module.driver.spi.spi_comm.full_duplex"/>
-      <property id="module.driver.spi.ssl_polarity" value="module.driver.spi.ssl_polarity.low"/>
-      <property id="module.driver.spi.ssl_select" value="module.driver.spi.ssl_select.zero"/>
-      <property id="module.driver.spi.mosi_idle_value_fixing" value="module.driver.spi.mosi_idle_value_fixing.disable"/>
-      <property id="module.driver.spi.parity" value="module.driver.spi.parity_mode.disable"/>
-      <property id="module.driver.spi.byte_swap" value="module.driver.spi.byte_swap.disable"/>
-      <property id="module.driver.spi.clock_source" value="module.driver.spi.clock_source.spinasyncclk"/>
-      <property id="module.driver.spi.bitrate" value="16000000"/>
-      <property id="module.driver.spi.spck_delay" value="module.driver.spi.spck_delay.one"/>
-      <property id="module.driver.spi.ssl_negation_delay" value="module.driver.spi.ssl_negation_delay.one"/>
-      <property id="module.driver.spi.next_access_delay" value="module.driver.spi.next_access_delay.one"/>
-      <property id="module.driver.spi.transmit_fifo_threshold" value="0"/>
-      <property id="module.driver.spi.receive_fifo_threshold" value="0"/>
-      <property id="module.driver.spi.receive_data_ready_detect_adjustment" value="0"/>
-      <property id="module.driver.spi.master_receive_clock" value="module.driver.spi.master_receive_clock.mrioclk"/>
-      <property id="module.driver.spi.mrioclk_analog_delay" value="module.driver.spi.mrioclk_analog_delay.nodelay"/>
-      <property id="module.driver.spi.mrclk_digital_delay" value="module.driver.spi.mrclk_digital_delay.zero"/>
-    </module>
-    <module id="module.driver.spi_on_spi.1321793344">
-      <property id="module.driver.spi.name" value="g_spi1"/>
-      <property id="module.driver.spi.channel" value="2"/>
-      <property id="module.driver.spi.rxi_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.spi.txi_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.spi.tei_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.spi.eri_ipl" value="board.icu.common.irq.priority12"/>
-      <property id="module.driver.spi.operating_mode" value="module.driver.spi.operating_mode.mode_master"/>
-      <property id="module.driver.spi.clk_phase" value="module.driver.spi.clk_phase.clk_phase_edge_odd"/>
-      <property id="module.driver.spi.clk_polarity" value="module.driver.spi.clk_polarity.clk_polarity_high"/>
-      <property id="module.driver.spi.mode_fault" value="module.driver.spi.mode_fault.mode_fault_error_disable"/>
-      <property id="module.driver.spi.bit_order" value="module.driver.spi.bit_order.bit_order_msb_first"/>
-      <property id="module.driver.spi.p_callback" value="NULL"/>
-      <property id="module.driver.spi.spi_clksyn" value="module.driver.spi.spi_clksyn.spi_clksyn"/>
-      <property id="module.driver.spi.spi_comm" value="module.driver.spi.spi_comm.full_duplex"/>
-      <property id="module.driver.spi.ssl_polarity" value="module.driver.spi.ssl_polarity.low"/>
-      <property id="module.driver.spi.ssl_select" value="module.driver.spi.ssl_select.zero"/>
-      <property id="module.driver.spi.mosi_idle_value_fixing" value="module.driver.spi.mosi_idle_value_fixing.disable"/>
-      <property id="module.driver.spi.parity" value="module.driver.spi.parity_mode.disable"/>
-      <property id="module.driver.spi.byte_swap" value="module.driver.spi.byte_swap.disable"/>
-      <property id="module.driver.spi.clock_source" value="module.driver.spi.clock_source.spinasyncclk"/>
-      <property id="module.driver.spi.bitrate" value="16000000"/>
-      <property id="module.driver.spi.spck_delay" value="module.driver.spi.spck_delay.one"/>
-      <property id="module.driver.spi.ssl_negation_delay" value="module.driver.spi.ssl_negation_delay.one"/>
-      <property id="module.driver.spi.next_access_delay" value="module.driver.spi.next_access_delay.one"/>
-      <property id="module.driver.spi.transmit_fifo_threshold" value="0"/>
-      <property id="module.driver.spi.receive_fifo_threshold" value="0"/>
-      <property id="module.driver.spi.receive_data_ready_detect_adjustment" value="0"/>
-      <property id="module.driver.spi.master_receive_clock" value="module.driver.spi.master_receive_clock.mrioclk"/>
-      <property id="module.driver.spi.mrioclk_analog_delay" value="module.driver.spi.mrioclk_analog_delay.nodelay"/>
-      <property id="module.driver.spi.mrclk_digital_delay" value="module.driver.spi.mrclk_digital_delay.zero"/>
-    </module>
     <context id="_hal.0">
       <stack module="module.driver.ioport_on_ioport.0"/>
       <stack module="module.bsp.memory_config.0"/>
-      <stack module="module.driver.uart_on_sci_uart.702178568"/>
-      <stack module="module.driver.timer_on_gpt.362709291"/>
-      <stack module="module.driver.timer_on_gpt.2038775320"/>
-      <stack module="module.driver.transfer_on_dmac.1835883999"/>
-      <stack module="module.driver.spi_on_spi.1212925467"/>
-      <stack module="module.driver.spi_on_spi.1321793344"/>
     </context>
-    <config id="config.driver.dmac">
-      <property id="config.driver.dmac.param_checking_enable" value="config.driver.dmac.param_checking_enable.bsp"/>
-      <property id="config.driver.dmac.multiplex_interrupt" value="config.driver.dmac.multiplex_interrupt.disabled"/>
-      <property id="config.driver.dmac.unit0_channel_priority0_7" value="config.driver.dmac.unit0_channel_priority0_7.fixed"/>
-      <property id="config.driver.dmac.unit0_channel_priority8_15" value="config.driver.dmac.unit0_channel_priority8_15.fixed"/>
-      <property id="config.driver.dmac.unit1_channel_priority0_7" value="config.driver.dmac.unit1_channel_priority0_7.fixed"/>
-      <property id="config.driver.dmac.unit1_channel_priority8_15" value="config.driver.dmac.unit1_channel_priority8_15.fixed"/>
-    </config>
-    <config id="config.driver.spi">
-      <property id="config.driver.spi.param_checking_enable" value="config.driver.spi.param_checking_enable.bsp"/>
-      <property id="config.driver.spi.dmac_enable" value="config.driver.spi.dmac_enable.disabled"/>
-      <property id="config.driver.spi.rxi_transmit" value="config.driver.spi.rxi_transmit.disabled"/>
-      <property id="config.driver.spi.multiplex_interrupt" value="config.driver.spi.multiplex_interrupt.disabled"/>
-    </config>
-    <config id="config.driver.ioport">
-      <property id="config.driver.ioport.checking" value="config.driver.ioport.checking.system"/>
-    </config>
-    <config id="config.driver.sci_uart">
-      <property id="config.driver.sci_uart.param_checking_enable" value="config.driver.sci_uart.param_checking_enable.bsp"/>
-      <property id="config.driver.sci_uart.fifo_support" value="config.driver.sci_uart.fifo_support.disabled"/>
-      <property id="config.driver.sci_uart.dmac_support" value="config.driver.sci_uart.dmac_support.disabled"/>
-      <property id="config.driver.sci_uart.flow_control" value="config.driver.sci_uart.flow_control.disabled"/>
-      <property id="config.driver.sci_uart.multiplex_interrupt" value="config.driver.sci_uart.multiplex_interrupt.disabled"/>
-    </config>
-    <config id="config.bsp.memory_config">
-      <property id="config.bsp.memory_config.mpu_type" value="config.bsp.memory_config.mpu_type.mpu"/>
-    </config>
-    <config id="config.driver.gpt">
-      <property id="config.driver.gpt.param_checking_enable" value="config.driver.gpt.param_checking_enable.bsp"/>
-      <property id="config.driver.gpt.output_support_enable" value="config.driver.gpt.output_support_enable.disabled"/>
-      <property id="config.driver.gpt.write_protect_enable" value="config.driver.gpt.write_protect_enable.disabled"/>
-      <property id="config.driver.gpt.multiplex_interrupt" value="config.driver.gpt.multiplex_interrupt.disabled"/>
-    </config>
   </raModuleConfiguration>
   <raPinConfiguration>
     <symbolicName propertyId="p00_0.symbolic_name" value="ETH2_RXD3"/>
@@ -1139,6 +715,9 @@
     <symbolicName propertyId="p24_1.symbolic_name" value="ETH2_RXCLK"/>
     <symbolicName propertyId="p24_2.symbolic_name" value="ETH2_RXD2"/>
     <pincfg active="true" name="RSK+RZT2L" selected="true" symbol="g_bsp_pin_cfg">
+      <configSetting altId="canfd0.canrx0.p01_7" configurationId="canfd0.canrx0"/>
+      <configSetting altId="canfd0.cantx0.p02_2" configurationId="canfd0.cantx0"/>
+      <configSetting altId="canfd0.mode.enabled.free" configurationId="canfd0.mode"/>
       <configSetting altId="dsmif1.mclk1.p22_2" configurationId="dsmif1.mclk1"/>
       <configSetting altId="dsmif1.mdat1.p21_4" configurationId="dsmif1.mdat1"/>
       <configSetting altId="dsmif1.mode.enabled.free" configurationId="dsmif1.mode"/>
@@ -1148,6 +727,11 @@
       <configSetting altId="dsmif3.mclk3.p21_7" configurationId="dsmif3.mclk3"/>
       <configSetting altId="dsmif3.mdat3.p22_0" configurationId="dsmif3.mdat3"/>
       <configSetting altId="dsmif3.mode.enabled.free" configurationId="dsmif3.mode"/>
+      <configSetting altId="encif1.encifck1.p09_6" configurationId="encif1.encifck1"/>
+      <configSetting altId="encif1.encifdi1.p10_1" configurationId="encif1.encifdi1"/>
+      <configSetting altId="encif1.encifdo1.p10_0" configurationId="encif1.encifdo1"/>
+      <configSetting altId="encif1.encifoe1.p09_7" configurationId="encif1.encifoe1"/>
+      <configSetting altId="encif1.mode.custom.free" configurationId="encif1.mode"/>
       <configSetting altId="ether_eth2.eth2_refclk.p00_3" configurationId="ether_eth2.eth2_refclk"/>
       <configSetting altId="ether_eth2.eth2_rxclk_ref_clk_rxc.p24_1" configurationId="ether_eth2.eth2_rxclk_ref_clk_rxc"/>
       <configSetting altId="ether_eth2.eth2_rxd0.p23_7" configurationId="ether_eth2.eth2_rxd0"/>
@@ -1227,22 +811,24 @@
       <configSetting altId="p01_5.sr.sr.fast" configurationId="p01_5.sr"/>
       <configSetting altId="p01_6.input" configurationId="p01_6"/>
       <configSetting altId="p01_6.gpio_mode.gpio_mode_in" configurationId="p01_6.gpio_mode"/>
+      <configSetting altId="p01_7.canfd0.canrx0" configurationId="p01_7"/>
+      <configSetting altId="p01_7.gpio_speed.gpio_speed_middle" configurationId="p01_7.gpio_drivecapacity"/>
+      <configSetting altId="p01_7.gpio_mode.gpio_mode_peripheral" configurationId="p01_7.gpio_mode"/>
+      <configSetting altId="p02_2.canfd0.cantx0" configurationId="p02_2"/>
+      <configSetting altId="p02_2.gpio_speed.gpio_speed_middle" configurationId="p02_2.gpio_drivecapacity"/>
+      <configSetting altId="p02_2.gpio_mode.gpio_mode_peripheral" configurationId="p02_2.gpio_mode"/>
       <configSetting altId="p02_4.jtag_fslash_swd.tdo" configurationId="p02_4"/>
       <configSetting altId="p02_4.gpio_speed.gpio_speed_high" configurationId="p02_4.gpio_drivecapacity"/>
       <configSetting altId="p02_4.gpio_mode.gpio_mode_peripheral" configurationId="p02_4.gpio_mode"/>
       <configSetting altId="p02_4.sr.sr.fast" configurationId="p02_4.sr"/>
       <configSetting altId="p02_5.jtag_fslash_swd.tdi" configurationId="p02_5"/>
-      <configSetting altId="p02_5.gpio_speed.gpio_speed_high" configurationId="p02_5.gpio_drivecapacity"/>
       <configSetting altId="p02_5.gpio_mode.gpio_mode_peripheral" configurationId="p02_5.gpio_mode"/>
-      <configSetting altId="p02_5.sr.sr.fast" configurationId="p02_5.sr"/>
       <configSetting altId="p02_6.jtag_fslash_swd.tms_swdio" configurationId="p02_6"/>
       <configSetting altId="p02_6.gpio_speed.gpio_speed_high" configurationId="p02_6.gpio_drivecapacity"/>
       <configSetting altId="p02_6.gpio_mode.gpio_mode_peripheral" configurationId="p02_6.gpio_mode"/>
       <configSetting altId="p02_6.sr.sr.fast" configurationId="p02_6.sr"/>
       <configSetting altId="p02_7.jtag_fslash_swd.tck_swclk" configurationId="p02_7"/>
-      <configSetting altId="p02_7.gpio_speed.gpio_speed_high" configurationId="p02_7.gpio_drivecapacity"/>
       <configSetting altId="p02_7.gpio_mode.gpio_mode_peripheral" configurationId="p02_7.gpio_mode"/>
-      <configSetting altId="p02_7.sr.sr.fast" configurationId="p02_7.sr"/>
       <configSetting altId="p04_1.input" configurationId="p04_1"/>
       <configSetting altId="p04_1.gpio_mode.gpio_mode_in" configurationId="p04_1.gpio_mode"/>
       <configSetting altId="p07_4.usb_hs.usb_vbusin" configurationId="p07_4"/>
@@ -1263,6 +849,14 @@
       <configSetting altId="p09_2.gpio_mode.gpio_mode_peripheral" configurationId="p09_2.gpio_mode"/>
       <configSetting altId="p09_3.mtu37.mtioc7d" configurationId="p09_3"/>
       <configSetting altId="p09_3.gpio_mode.gpio_mode_peripheral" configurationId="p09_3.gpio_mode"/>
+      <configSetting altId="p09_6.encif1.encifck1" configurationId="p09_6"/>
+      <configSetting altId="p09_6.gpio_mode.gpio_mode_peripheral" configurationId="p09_6.gpio_mode"/>
+      <configSetting altId="p09_7.encif1.encifoe1" configurationId="p09_7"/>
+      <configSetting altId="p09_7.gpio_mode.gpio_mode_peripheral" configurationId="p09_7.gpio_mode"/>
+      <configSetting altId="p10_0.encif1.encifdo1" configurationId="p10_0"/>
+      <configSetting altId="p10_0.gpio_mode.gpio_mode_peripheral" configurationId="p10_0.gpio_mode"/>
+      <configSetting altId="p10_1.encif1.encifdi1" configurationId="p10_1"/>
+      <configSetting altId="p10_1.gpio_mode.gpio_mode_peripheral" configurationId="p10_1.gpio_mode"/>
       <configSetting altId="p10_3.irq.irq8" configurationId="p10_3"/>
       <configSetting altId="p10_3.gpio_mode.gpio_mode_peripheral" configurationId="p10_3.gpio_mode"/>
       <configSetting altId="p10_3.gpio_pupd.gpio_pupd_ip_up" configurationId="p10_3.gpio_pupd"/>
@@ -1272,10 +866,8 @@
       <configSetting altId="p13_3.iic0.iic_sda0" configurationId="p13_3"/>
       <configSetting altId="p13_3.gpio_speed.gpio_speed_middle" configurationId="p13_3.gpio_drivecapacity"/>
       <configSetting altId="p13_3.gpio_mode.gpio_mode_peripheral" configurationId="p13_3.gpio_mode"/>
-      <configSetting altId="p13_5.spi1.spi_rspck1" configurationId="p13_5"/>
-      <configSetting altId="p13_5.gpio_speed.gpio_speed_high" configurationId="p13_5.gpio_drivecapacity"/>
-      <configSetting altId="p13_5.gpio_mode.gpio_mode_peripheral" configurationId="p13_5.gpio_mode"/>
-      <configSetting altId="p13_5.sr.sr.fast" configurationId="p13_5.sr"/>
+      <configSetting altId="p13_4.output.low" configurationId="p13_4"/>
+      <configSetting altId="p13_4.gpio_mode.gpio_mode_out.low" configurationId="p13_4.gpio_mode"/>
       <configSetting altId="p13_7.mtu3.mtclkc" configurationId="p13_7"/>
       <configSetting altId="p13_7.gpio_speed.gpio_speed_middle" configurationId="p13_7.gpio_drivecapacity"/>
       <configSetting altId="p13_7.gpio_mode.gpio_mode_peripheral" configurationId="p13_7.gpio_mode"/>
@@ -1288,10 +880,6 @@
       <configSetting altId="p14_2.gpio_mode.gpio_mode_peripheral" configurationId="p14_2.gpio_mode"/>
       <configSetting altId="p14_3.input" configurationId="p14_3"/>
       <configSetting altId="p14_3.gpio_mode.gpio_mode_in" configurationId="p14_3.gpio_mode"/>
-      <configSetting altId="p14_7.spi1.spi_miso1" configurationId="p14_7"/>
-      <configSetting altId="p14_7.gpio_speed.gpio_speed_high" configurationId="p14_7.gpio_drivecapacity"/>
-      <configSetting altId="p14_7.gpio_mode.gpio_mode_peripheral" configurationId="p14_7.gpio_mode"/>
-      <configSetting altId="p14_7.sr.sr.fast" configurationId="p14_7.sr"/>
       <configSetting altId="p15_6.dsmif2.mdat2" configurationId="p15_6"/>
       <configSetting altId="p15_6.gpio_mode.gpio_mode_peripheral" configurationId="p15_6.gpio_mode"/>
       <configSetting altId="p16_0.sci0.txd_mosi0" configurationId="p16_0"/>
@@ -1304,32 +892,42 @@
       <configSetting altId="p16_1.sr.sr.fast" configurationId="p16_1.sr"/>
       <configSetting altId="p16_3.irq.irq7" configurationId="p16_3"/>
       <configSetting altId="p16_3.gpio_mode.gpio_mode_peripheral" configurationId="p16_3.gpio_mode"/>
+      <configSetting altId="p17_0.xspi1.xspi1_io1" configurationId="p17_0"/>
+      <configSetting altId="p17_0.gpio_speed.gpio_speed_high" configurationId="p17_0.gpio_drivecapacity"/>
+      <configSetting altId="p17_0.gpio_mode.gpio_mode_peripheral" configurationId="p17_0.gpio_mode"/>
+      <configSetting altId="p17_0.smt.smt.enable" configurationId="p17_0.smt"/>
+      <configSetting altId="p17_0.sr.sr.fast" configurationId="p17_0.sr"/>
+      <configSetting altId="p17_3.xspi1.xspi1_io2" configurationId="p17_3"/>
+      <configSetting altId="p17_3.gpio_speed.gpio_speed_high" configurationId="p17_3.gpio_drivecapacity"/>
+      <configSetting altId="p17_3.gpio_mode.gpio_mode_peripheral" configurationId="p17_3.gpio_mode"/>
+      <configSetting altId="p17_3.smt.smt.enable" configurationId="p17_3.smt"/>
+      <configSetting altId="p17_3.sr.sr.fast" configurationId="p17_3.sr"/>
+      <configSetting altId="p17_4.xspi1.xspi1_io3" configurationId="p17_4"/>
+      <configSetting altId="p17_4.gpio_speed.gpio_speed_high" configurationId="p17_4.gpio_drivecapacity"/>
+      <configSetting altId="p17_4.gpio_mode.gpio_mode_peripheral" configurationId="p17_4.gpio_mode"/>
+      <configSetting altId="p17_4.smt.smt.enable" configurationId="p17_4.smt"/>
+      <configSetting altId="p17_4.sr.sr.fast" configurationId="p17_4.sr"/>
       <configSetting altId="p17_5.usb_hs.usb_ovrcur" configurationId="p17_5"/>
       <configSetting altId="p17_5.gpio_mode.gpio_mode_peripheral" configurationId="p17_5.gpio_mode"/>
       <configSetting altId="p17_6.output.low" configurationId="p17_6"/>
       <configSetting altId="p17_6.gpio_mode.gpio_mode_out.low" configurationId="p17_6.gpio_mode"/>
-      <configSetting altId="p17_7.sci3.rxd_miso3" configurationId="p17_7"/>
+      <configSetting altId="p17_7.xspi1.xspi1_ckp" configurationId="p17_7"/>
       <configSetting altId="p17_7.gpio_speed.gpio_speed_high" configurationId="p17_7.gpio_drivecapacity"/>
       <configSetting altId="p17_7.gpio_mode.gpio_mode_peripheral" configurationId="p17_7.gpio_mode"/>
+      <configSetting altId="p17_7.smt.smt.enable" configurationId="p17_7.smt"/>
       <configSetting altId="p17_7.sr.sr.fast" configurationId="p17_7.sr"/>
-      <configSetting altId="p18_0.sci3.txd_mosi3" configurationId="p18_0"/>
+      <configSetting altId="p18_0.xspi1.xspi1_io0" configurationId="p18_0"/>
       <configSetting altId="p18_0.gpio_speed.gpio_speed_high" configurationId="p18_0.gpio_drivecapacity"/>
       <configSetting altId="p18_0.gpio_mode.gpio_mode_peripheral" configurationId="p18_0.gpio_mode"/>
+      <configSetting altId="p18_0.smt.smt.enable" configurationId="p18_0.smt"/>
       <configSetting altId="p18_0.sr.sr.fast" configurationId="p18_0.sr"/>
       <configSetting altId="p18_1.output.low" configurationId="p18_1"/>
       <configSetting altId="p18_1.gpio_mode.gpio_mode_out.low" configurationId="p18_1.gpio_mode"/>
-      <configSetting altId="p18_3.sci3.de3" configurationId="p18_3"/>
-      <configSetting altId="p18_3.gpio_speed.gpio_speed_high" configurationId="p18_3.gpio_drivecapacity"/>
-      <configSetting altId="p18_3.gpio_mode.gpio_mode_peripheral" configurationId="p18_3.gpio_mode"/>
-      <configSetting altId="p18_3.sr.sr.fast" configurationId="p18_3.sr"/>
-      <configSetting altId="p18_4.spi2.spi_rspck2" configurationId="p18_4"/>
-      <configSetting altId="p18_4.gpio_speed.gpio_speed_high" configurationId="p18_4.gpio_drivecapacity"/>
-      <configSetting altId="p18_4.gpio_mode.gpio_mode_peripheral" configurationId="p18_4.gpio_mode"/>
-      <configSetting altId="p18_4.sr.sr.fast" configurationId="p18_4.sr"/>
-      <configSetting altId="p18_6.spi2.spi_miso2" configurationId="p18_6"/>
-      <configSetting altId="p18_6.gpio_speed.gpio_speed_high" configurationId="p18_6.gpio_drivecapacity"/>
-      <configSetting altId="p18_6.gpio_mode.gpio_mode_peripheral" configurationId="p18_6.gpio_mode"/>
-      <configSetting altId="p18_6.sr.sr.fast" configurationId="p18_6.sr"/>
+      <configSetting altId="p18_2.xspi1.xspi1_cs0_hash" configurationId="p18_2"/>
+      <configSetting altId="p18_2.gpio_speed.gpio_speed_high" configurationId="p18_2.gpio_drivecapacity"/>
+      <configSetting altId="p18_2.gpio_mode.gpio_mode_peripheral" configurationId="p18_2.gpio_mode"/>
+      <configSetting altId="p18_2.smt.smt.enable" configurationId="p18_2.smt"/>
+      <configSetting altId="p18_2.sr.sr.fast" configurationId="p18_2.sr"/>
       <configSetting altId="p20_3.output.low" configurationId="p20_3"/>
       <configSetting altId="p20_3.gpio_mode.gpio_mode_out.low" configurationId="p20_3.gpio_mode"/>
       <configSetting altId="p20_4.output.low" configurationId="p20_4"/>
@@ -1375,38 +973,35 @@
       <configSetting altId="sci0.mode.asynchronousmode.free" configurationId="sci0.mode"/>
       <configSetting altId="sci0.rxd_miso0.p16_1" configurationId="sci0.rxd_miso0"/>
       <configSetting altId="sci0.txd_mosi0.p16_0" configurationId="sci0.txd_mosi0"/>
-      <configSetting altId="sci3.de3.p18_3" configurationId="sci3.de3"/>
-      <configSetting altId="sci3.mode.asynchronousmode.free" configurationId="sci3.mode"/>
-      <configSetting altId="sci3.rxd_miso3.p17_7" configurationId="sci3.rxd_miso3"/>
-      <configSetting altId="sci3.txd_mosi3.p18_0" configurationId="sci3.txd_mosi3"/>
-      <configSetting altId="spi1.mode.enabled.free" configurationId="spi1.mode"/>
-      <configSetting altId="spi1.spi_miso1.p14_7" configurationId="spi1.spi_miso1"/>
-      <configSetting altId="spi1.spi_rspck1.p13_5" configurationId="spi1.spi_rspck1"/>
-      <configSetting altId="spi2.mode.enabled.free" configurationId="spi2.mode"/>
-      <configSetting altId="spi2.spi_miso2.p18_6" configurationId="spi2.spi_miso2"/>
-      <configSetting altId="spi2.spi_rspck2.p18_4" configurationId="spi2.spi_rspck2"/>
       <configSetting altId="usb_hs.mode.custom.free" configurationId="usb_hs.mode"/>
       <configSetting altId="usb_hs.usb_ovrcur.p17_5" configurationId="usb_hs.usb_ovrcur"/>
       <configSetting altId="usb_hs.usb_vbusin.p07_4" configurationId="usb_hs.usb_vbusin"/>
+      <configSetting altId="xspi1.mode.custom_40_3.3v_41.free" configurationId="xspi1.mode"/>
+      <configSetting altId="xspi1.xspi1_ckp.p17_7" configurationId="xspi1.xspi1_ckp"/>
+      <configSetting altId="xspi1.xspi1_cs0_hash.p18_2" configurationId="xspi1.xspi1_cs0_hash"/>
+      <configSetting altId="xspi1.xspi1_io0.p18_0" configurationId="xspi1.xspi1_io0"/>
+      <configSetting altId="xspi1.xspi1_io1.p17_0" configurationId="xspi1.xspi1_io1"/>
+      <configSetting altId="xspi1.xspi1_io2.p17_3" configurationId="xspi1.xspi1_io2"/>
+      <configSetting altId="xspi1.xspi1_io3.p17_4" configurationId="xspi1.xspi1_io3"/>
     </pincfg>
-    <pincfg active="false" name="R9A07G074M04GBG.pincfg" selected="false" symbol="">
+    <pincfg active="false" name="R9A07G074M04GBG.pincfg" symbol="">
+      <configSetting altId="p02_4.gpio_mode.gpio_mode_peripheral" configurationId="p02_4.gpio_mode"/>
+      <configSetting altId="p02_4.gpio_speed.gpio_speed_high" configurationId="p02_4.gpio_drivecapacity"/>
+      <configSetting altId="p02_4.sr.sr.fast" configurationId="p02_4.sr"/>
+      <configSetting altId="p02_4.jtag_fslash_swd.tdo" configurationId="p02_4"/>
+      <configSetting altId="p02_5.gpio_mode.gpio_mode_peripheral" configurationId="p02_5.gpio_mode"/>
+      <configSetting altId="p02_5.jtag_fslash_swd.tdi" configurationId="p02_5"/>
+      <configSetting altId="p02_6.gpio_mode.gpio_mode_peripheral" configurationId="p02_6.gpio_mode"/>
+      <configSetting altId="p02_6.gpio_speed.gpio_speed_high" configurationId="p02_6.gpio_drivecapacity"/>
+      <configSetting altId="p02_6.sr.sr.fast" configurationId="p02_6.sr"/>
+      <configSetting altId="p02_6.jtag_fslash_swd.tms_swdio" configurationId="p02_6"/>
+      <configSetting altId="p02_7.gpio_mode.gpio_mode_peripheral" configurationId="p02_7.gpio_mode"/>
+      <configSetting altId="p02_7.jtag_fslash_swd.tck_swclk" configurationId="p02_7"/>
       <configSetting altId="jtag_fslash_swd.mode.jtag.free" configurationId="jtag_fslash_swd.mode"/>
       <configSetting altId="jtag_fslash_swd.tck_swclk.p02_7" configurationId="jtag_fslash_swd.tck_swclk"/>
       <configSetting altId="jtag_fslash_swd.tdi.p02_5" configurationId="jtag_fslash_swd.tdi"/>
       <configSetting altId="jtag_fslash_swd.tdo.p02_4" configurationId="jtag_fslash_swd.tdo"/>
       <configSetting altId="jtag_fslash_swd.tms_swdio.p02_6" configurationId="jtag_fslash_swd.tms_swdio"/>
-      <configSetting altId="p02_4.jtag_fslash_swd.tdo" configurationId="p02_4"/>
-      <configSetting altId="p02_4.gpio_speed.gpio_speed_high" configurationId="p02_4.gpio_drivecapacity"/>
-      <configSetting altId="p02_4.gpio_mode.gpio_mode_peripheral" configurationId="p02_4.gpio_mode"/>
-      <configSetting altId="p02_4.sr.sr.fast" configurationId="p02_4.sr"/>
-      <configSetting altId="p02_5.jtag_fslash_swd.tdi" configurationId="p02_5"/>
-      <configSetting altId="p02_5.gpio_mode.gpio_mode_peripheral" configurationId="p02_5.gpio_mode"/>
-      <configSetting altId="p02_6.jtag_fslash_swd.tms_swdio" configurationId="p02_6"/>
-      <configSetting altId="p02_6.gpio_speed.gpio_speed_high" configurationId="p02_6.gpio_drivecapacity"/>
-      <configSetting altId="p02_6.gpio_mode.gpio_mode_peripheral" configurationId="p02_6.gpio_mode"/>
-      <configSetting altId="p02_6.sr.sr.fast" configurationId="p02_6.sr"/>
-      <configSetting altId="p02_7.jtag_fslash_swd.tck_swclk" configurationId="p02_7"/>
-      <configSetting altId="p02_7.gpio_mode.gpio_mode_peripheral" configurationId="p02_7.gpio_mode"/>
     </pincfg>
   </raPinConfiguration>
 </raConfiguration>
